@@ -1,0 +1,60 @@
+.bannerContainer {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    background: transparent;
+}
+
+.picadoPiece {
+    width: 120px;
+    height: 150px;
+    margin: 0 5px;
+    position: relative;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%);
+    animation: wave 3s infinite ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 40px;
+
+    // Agujeros decorativos (simulados con sombras o backgrounds)
+    &::before {
+        content: '✿';
+        position: absolute;
+    }
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(2deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(-2deg);
+    }
+}
+
+// Colores tradicionales
+.pink {
+    background-color: #ff1493;
+}
+
+.orange {
+    background-color: #ff8c00;
+}
+
+.purple {
+    background-color: #8a2be2;
+}
+
+.blue {
+    background-color: #00ced1;
+}
+
+.yellow {
+    background-color: #ffd700;
+}

@@ -1,0 +1,59 @@
+.altarContainer {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.tier {
+    width: 100%;
+    background: #2a1b0a; // Color madera oscura
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    transition: transform 0.3s ease;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 5%;
+        width: 90%;
+        height: 15px;
+        background: rgba(0, 0, 0, 0.3);
+        filter: blur(10px);
+    }
+}
+
+.topTier {
+    width: 40%;
+    z-index: 3;
+    transform: translateZ(50px);
+}
+
+.middleTier {
+    width: 70%;
+    z-index: 2;
+    transform: translateZ(25px);
+}
+
+.baseTier {
+    width: 100%;
+    z-index: 1;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}

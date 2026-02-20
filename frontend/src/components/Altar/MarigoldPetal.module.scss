@@ -1,0 +1,33 @@
+@use "sass:math";
+
+.petal {
+    position: absolute;
+    width: 15px;
+    height: 10px;
+    background: #ff9d00;
+    border-radius: 50% 50% 0 50%;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+@for $i from 1 through 20 {
+    .petal:nth-child(#{$i}) {
+        left: math.random(100) * 1%;
+        top: -20px;
+        animation: fall-#{$i} (math.random(5000) + 3000) * 1ms infinite linear;
+        animation-delay: math.random(5000) * 1ms;
+        transform: rotate(math.random(360) * 1deg);
+    }
+
+    @keyframes fall-#{$i} {
+        0% {
+            top: -20px;
+            transform: translateX(0) rotate(0deg);
+        }
+
+        100% {
+            top: 110vh;
+            transform: translateX(math.random(100) - 50 * 1px) rotate(math.random(720) * 1deg);
+        }
+    }
+}

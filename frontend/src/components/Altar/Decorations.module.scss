@@ -1,0 +1,53 @@
+.calaverita {
+    display: inline-block;
+    cursor: help;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.2));
+
+    &:hover {
+        animation: shake 0.5s ease-in-out infinite;
+        filter: drop-shadow(0 0 15px rgba(255, 165, 0, 0.6));
+    }
+}
+
+.panMuerto {
+    display: inline-block;
+    cursor: help;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &:hover {
+        transform: scale(1.2) rotate(5deg);
+        filter: brightness(1.1) saturate(1.2);
+    }
+}
+
+.itemBase {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
